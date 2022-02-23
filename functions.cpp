@@ -1,14 +1,18 @@
-/*
- * Your comment header here
- * modify this file as needed to complete the assignment
- */
+/***************************************************************************
+Name: Natalia Ksenz
+Coding 04
+Purpose: The assignment to create a stack object that will work with a struct
+data type called Data.
+
+File: functions.cpp
+***************************************************************************/
 
 #include "functions.h"
 
 void rand_string(std::string *str){
     // create size 0 to MAXSTRSIZE-1
     int rnum = rand() % MAXSTRSIZE;
-    
+
     // make buffer to hold rand string
     char *buffer = new char[rnum+1];
 
@@ -26,4 +30,3 @@ void rand_string(std::string *str){
     delete buffer;
     return;
 }
-
