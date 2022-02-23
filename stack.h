@@ -1,7 +1,11 @@
-/*
- * Your comment header here
- * modify this file as needed to complete the assignment
- */
+/***************************************************************************
+Name: Natalia Ksenz
+Coding 04
+Purpose: The assignment to create a stack object that will work with a struct
+data type called Data.
+
+File: stack.h
+***************************************************************************/
 
 #ifndef STACK_H
 #define STACK_H
@@ -17,22 +21,22 @@ class Stack {
 
 public:
 
-    /* 
-     * write all your public method prototypes here
-     * this includes you constructor and destructor
-     */
-    
-private:
+    Stack(int);
+    ~Stack();
 
-    /* 
-     * write all your private method prototypes here
-     */
+    void setSize(int);
+    bool push(int, string&);
+    int pop(Data&);
+    int peek();
+    bool isEmpty();
+
+private:
 
     // these are the only attributes you need.
     // do not modify them or add any other attributes
     int top;
     int size;
-    Data **stack;
+    Data **stack;   // a stack of pointer to Data
 };
 
 #endif //STACK_H
