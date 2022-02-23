@@ -1,66 +1,62 @@
-/*
- * your header here
- * 
- */
+/***************************************************************************
+Name: Natalia Ksenz
+Coding 04
+Purpose: The assignment to create a stack object that will work with a struct
+data type called Data.
+
+File: main.cpp
+***************************************************************************/
 
 #include "main.h"
 
 int main(int argc, char **argv) {
-    // here for the rand_string() function
-    // if you don't use it, get rid of this
     srand(time(NULL));
-
-    /* ***************************************************************
-     * First get your arguments from the command line. Your program must
-     * accept one and only one argument not including the program name
-     * itself. That argument must be an integer between 2 and any
-     * number (i.e. >= 2). If anything else is entered in any way,
-     * terminate the program with a suitable error message telling the
-     * user how to use your program correctly.
-     * 
-     * Remember, you may not use more than one return, even in main()
-     * and you may not use exit() or anything like that.
-     * ***************************************************************/
-    
-    /* ***************************************************************
-     * Use the number passed in from the command line and declare a stack
-     * that uses that number as the size of the stack. NOTE: Make sure
-     * your stack ALSO checks the number passed in to it. You cannot rely
-     * on main checking the number first. This will be tested during grading.
-     * ***************************************************************/
-
-    
-    /* ***************************************************************
-     * Throughly test your stack. You must perform an exhaustive series
-     * of tests on your stack. Show all possible ways your stack can be used
-     * and abused and prove that your stack can gracefully handle ALL cases.
-     * You must use automated testing (no user input). First cover all
-     * explicit cases which you can think of, then execute random operations.
-     * When generating test data, use random ints for ids and random short
-     * strings for string. There is a string generator made for you in the
-     * functions module. You are free to use it or make your own.
-     * ***************************************************************/
-
-    /* ***************************************************************
-     * Below is some sample code for the random string function. It's
-     * only here to demonstrate the function. DELETE it once you study
-     * it and understand it and can use it yourself in your code.
-     * ***************************************************************/
-    
-    // make 20 random strings, store them, display them
-    std::string strtemp;
-    for(int i=0; i<20; i++){
-        rand_string(&strtemp);
-        std::cout << strtemp << std::endl;
+    if (argc != 2) {
+        cout << "Error: You need to input the program name and ONE integer with" <<
+        " value greater than 2.\nThe program will be terminted." << endl;
     }
-    
-    /* ***************************************************************
-     * Your code will be tested by applying your stack to a custom main
-     * designed to break your code. If it can be broken, you risk a
-     * substantially reduced grade, up to and including a zero.
-     * ***************************************************************/
-    
-    // WHEN YOU SUBMIT, DELETE ALL INSTRUCTIONAL COMMENTS
-    
+    else {
+      int size = atoi(argv[1]);
+      if (size < 2) {
+        cout << "Error: You need to input the program name and ONE integer with" <<
+        " value greater than 2.\nThe program will be terminted." << endl;
+      }
+      else {
+        Stack stack(size);
+
+        cout << "\nBeginning tests...\n\nTesting empty operations." << endl;
+        cout << "=====================================================" << endl;
+
+        // testing isEmpty() on empty stack
+        if (stack.isEmpty()){
+            cout << "The stack is empty." << endl;
+        }
+        else {
+            cout << "The stack is not empty." << endl;
+        }
+
+        // testing peek() and pop() on empty stack
+
+
+        cout << "\nTesting full operations." << endl;
+        cout << "=====================================================" << endl;
+
+        // testing filling the stack and overflow
+        cout << "Filling stack..." << endl;
+        for (int i = 0; i < size*MULTIPLIER; i++) {
+            int num=rand()%1000;
+            std::string strtemp;
+            rand_string(&strtemp);
+            if (stack.push(num, strtemp)) {
+                cout << "pushed id: " << num << " information: " << strtemp << endl;
+            } else {
+                cout << "overflow error: " << num  << " and " << strtemp <<
+                " not pushed" << endl;
+            }
+        }
+        cout << endl;
+
+    }
+
     return 0;
 }
