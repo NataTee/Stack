@@ -11,17 +11,9 @@ File: main.cpp
 
 int main(int argc, char **argv) {
     srand(time(NULL));
-    if (argc != 2) {
-        cout << "Error: You need to input the program name and ONE integer with" <<
-        " value greater than 2.\nThe program will be terminted." << endl;
-    }
-    else {
-      int size = atoi(argv[1]);
-      if (size < 2) {
-        cout << "Error: You need to input the program name and ONE integer with" <<
-        " value greater than 2.\nThe program will be terminted." << endl;
-      }
-      else {
+    int size = atoi(argv[1]);
+
+    if (argc == 2 && size >=2 ) {
         Stack stack(size);
 
         cout << "\nBeginning tests...\n\nTesting empty operations." << endl;
@@ -35,7 +27,7 @@ int main(int argc, char **argv) {
             cout << "The stack is not empty." << endl;
         }
 
-        // testing peek() and pop() on empty stack
+      // testing peek() and pop() on empty stack
 
 
         cout << "\nTesting full operations." << endl;
@@ -56,6 +48,10 @@ int main(int argc, char **argv) {
         }
         cout << endl;
 
+    }
+    else {
+        cout << "Error: You need to input the program name and ONE integer with" <<
+        " value greater than 2.\nThe program will be terminted." << endl;
     }
 
     return 0;
