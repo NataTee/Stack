@@ -1,7 +1,11 @@
-/*
- * Your comment header here
- * modify this file as needed to complete the assignment
- */
+/***************************************************************************
+Name: Natalia Ksenz
+Coding 04
+Purpose: The assignment to create a stack object that will work with a struct
+data type called Data.
+
+File: functions.h
+***************************************************************************/
 
 #ifndef STACKS_FUNCTIONS_H
 #define STACKS_FUNCTIONS_H
@@ -9,7 +13,6 @@
 #define MAXSTRSIZE 8
 
 #include <stdlib.h>   /* srand, rand */
-#include <time.h>     /* time */
 #include <time.h>     /* time */
 #include <string>     /* string */
 
