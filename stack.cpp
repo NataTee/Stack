@@ -18,6 +18,10 @@ Stack::Stack(int s) {
 
 
 Stack::~Stack() {
+    for(int i = 0; i < size; i++) {
+        delete stack[i];
+    }
+    delete[] stack;
 }
 
 bool Stack::push(int id, string &infoString) {
@@ -41,20 +45,24 @@ bool Stack::push(int id, string &infoString) {
   return add;
 }
 
-bool Stack::pop(&data) {
-
-    if (isEmpty()) {
-        throw "Underflow error!";
+bool Stack::pop(Data *data) {
+    bool popped = false;
+    if (top > -1) {
+        data->id = stack[top]->id;
+        data->information = stack[top]->information;
+        delete stack[top];
+        top -= 1;
+        popped = true;
     }
-    return stack[top--];
+    else {
+      data->id = -1;
+      data->information = "";
+    }
+    return popped;
 }
 
-bool Stack::peek() {
-    if (isEmpty()) {
-        throw "Stack is empty!";
-    }
-    return stack[top];
-}
+/*bool Stack::peek() {
+}*/
 
 bool Stack::isEmpty() {
   bool empty = false;
