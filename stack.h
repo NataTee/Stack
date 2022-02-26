@@ -27,7 +27,7 @@ public:
     void setSize(int);
     bool push(int, string&);
     bool pop(Data*);
-    int peek();
+    bool peek(Data*);
     bool isEmpty();
 
 private:
