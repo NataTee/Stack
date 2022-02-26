@@ -23,6 +23,7 @@ int main(int argc, char **argv) {
                 " value greater than 2.\nThe program will be terminted." << endl;
             }
             else {
+                cout << "Creating stack of size " << size << endl;
                 Stack stack(size);
 
                 /************************************************
@@ -232,23 +233,25 @@ int main(int argc, char **argv) {
 
                 // testing random operations
                 for (int test=0; test<=size+30; test++) {
-                    int option = rand()%4;
+                    int option = rand()%6;
                     int num=rand()%1000;
                     std::string strtemp;
                     rand_string(&strtemp);
 
                     switch(option) {
                         case 0:
+                        case 1:
                             // push()
                             if (stack.push(num, strtemp)) {
-                                cout << "pushed id: " << num << " information: " <<
+                                cout << "Pushed id: " << num << " information: " <<
                                 strtemp << endl;
                             } else {
                                 cout << "Error: data was not pushed" << endl;
                             }
                             break;
 
-                        case 1:
+                        case 2:
+                        case 3:
                             // pop()
                             if(stack.pop(data)) {
                                 cout << "Id: " << data->id << " and information: " <<
@@ -259,7 +262,7 @@ int main(int argc, char **argv) {
                             }
                             break;
 
-                        case 2:
+                        case 4:
                             // peek()
                             if(stack.peek(data)){
                                 cout << "Id: " << data->id << " and information: " <<
@@ -270,7 +273,7 @@ int main(int argc, char **argv) {
                             }
                             break;
 
-                        case 3:
+                        case 5:
                         // isEmpty()
                             if (stack.isEmpty()) {
                                 cout << "The stack is empty" << endl;
@@ -282,9 +285,13 @@ int main(int argc, char **argv) {
                     }
                 }
                 cout << endl;
+                cout << "Testing complete." << endl;
             }
         }
+        else {
+            cout << "Error: You need to input the program name and ONE integer with" <<
+            " value greater than 2.\nThe program will be terminted." << endl;
+        }
     }
-    cout << "Testing complete." << endl;
     return 0;
 }
