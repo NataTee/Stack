@@ -17,6 +17,7 @@ File: main.h
 #include <string>     /* string */
 #include "functions.h"
 #define MULTIPLIER 1.5 // used to test overflow and underflow
+#define NARROW .30 // percent of the stack for a narrow band
 
 using std::cout;
 using std::endl;
