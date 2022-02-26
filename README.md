@@ -1,2 +1,2 @@
-# stack-starter
-Starter code for creating a simple stack.
+# Stack
+Assignment to create a stack of pointers to Data structs.
