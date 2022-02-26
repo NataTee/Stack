@@ -18,7 +18,7 @@ Stack::Stack(int s) {
 
 
 Stack::~Stack() {
-    for(int i = 0; i < size; i++) {
+    for(int i = top; i > -1; i--) {
         delete stack[i];
     }
     delete[] stack;
@@ -55,14 +55,25 @@ bool Stack::pop(Data *data) {
         popped = true;
     }
     else {
-      data->id = -1;
-      data->information = "";
+        data->id = -1;
+        data->information = "";
     }
     return popped;
 }
 
-/*bool Stack::peek() {
-}*/
+bool Stack::peek(Data *data) {
+    bool peeked = false;
+    if (top > -1) {
+        data->id = stack[top]->id;
+        data->information = stack[top]->information;
+        peeked = true;
+    }
+    else {
+        data->id = -1;
+        data->information = "";
+    }
+    return peeked;
+}
 
 bool Stack::isEmpty() {
   bool empty = false;
