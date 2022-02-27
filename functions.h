@@ -17,5 +17,6 @@ File: functions.h
 #include <string>     /* string */
 
 void rand_string(std::string*);
+bool isInteger(char*);
 
 #endif /* STACKS_FUNCTIONS_H */
