@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
         " value greater than 2.\nThe program will be terminted." << endl;
     }
     else {
-        if (isdigit(*argv[1])) {
+        if (isInteger(argv[1])) {
             int size = atoi(argv[1]);
             if (size < 2) {
                 cout << "Error: You need to input the program name and ONE integer with" <<
@@ -164,7 +164,7 @@ int main(int argc, char **argv) {
                     std::string strtemp;
                     rand_string(&strtemp);
                     if (stack.push(num, strtemp)) {
-                        cout << "pushed id: " << num << " information: " << strtemp << endl;
+                        cout << "Pushed id: " << num << " information: " << strtemp << endl;
                     } else {
                         cout << "Error: data was not pushed" << endl;
                     }

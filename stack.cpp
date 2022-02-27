@@ -25,21 +25,14 @@ Stack::~Stack() {
 }
 
 bool Stack::push(int id, string &infoString) {
-  bool add = true;
+  bool add = false;
 
-  if (top < size-1) {
-      if (id > 0 && infoString != "\0") {
-          Data *data = new Data;
-          data->id = id;
-          data->information = infoString;
-          stack[++top] = data;
-      }
-      else {
-          add = false;
-      }
-  }
-  else {
-      add = false;
+  if (top < size-1 && (id > 0 && infoString != "\0")) {
+      Data *data = new Data;
+      data->id = id;
+      data->information = infoString;
+      stack[++top] = data;
+      add = true;
   }
 
   return add;
@@ -84,10 +77,7 @@ bool Stack::isEmpty() {
 }
 
 void Stack::setSize (int s) {
-    if (s > 2) {
+    if (s >= 2) {
         size = s;
-    }
-    else {
-      size = 2;
     }
 }
