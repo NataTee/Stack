@@ -24,7 +24,6 @@ public:
     Stack(int);
     ~Stack();
 
-    void setSize(int);
     bool push(int, string&);
     bool pop(Data*);
     bool peek(Data*);
@@ -32,6 +31,8 @@ public:
 
 private:
 
+    void setSize(int);
+    
     // these are the only attributes you need.
     // do not modify them or add any other attributes
     int top;
