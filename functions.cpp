@@ -30,3 +30,16 @@ void rand_string(std::string *str){
     delete buffer;
     return;
 }
+
+bool isInteger(char *str) {
+
+    bool result = true;
+    int i = 0;
+    while(str[i] != '\0') {
+        if(!isdigit(str[i])) {
+            result = false;
+        }
+        i++;
+    }
+    return result;
+}
