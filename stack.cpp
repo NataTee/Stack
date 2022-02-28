@@ -16,7 +16,6 @@ Stack::Stack(int s) {
     stack = new Data*[size];
 }
 
-
 Stack::~Stack() {
     for(int i = top; i > -1; i--) {
         delete stack[i];
@@ -77,7 +76,10 @@ bool Stack::isEmpty() {
 }
 
 void Stack::setSize (int s) {
-    if (s >= 2) {
+    if (s >= MINSIZE) {
         size = s;
+    }
+    else {
+        size = MINSIZE;
     }
 }
