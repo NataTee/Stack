@@ -11,14 +11,14 @@ File: main.cpp
 
 int main(int argc, char **argv) {
     srand(time(NULL));
-    if (argc != 2) {
+    if (argc != MINSIZE) {
         cout << "Error: You need to input the program name and ONE integer with" <<
         " value greater than 2.\nThe program will be terminted." << endl;
     }
     else {
         if (isInteger(argv[1])) {
             int size = atoi(argv[1]);
-            if (size < 2) {
+            if (size < MINSIZE) {
                 cout << "Error: You need to input the program name and ONE integer with" <<
                 " value greater than 2.\nThe program will be terminted." << endl;
             }
@@ -232,7 +232,7 @@ int main(int argc, char **argv) {
                 }
 
                 // testing random operations
-                for (int test=0; test<=size+30; test++) {
+                for (int test=0; test<=sizegit add ; test++) {
                     int option = rand()%6;
                     int num=rand()%1000;
                     std::string strtemp;
