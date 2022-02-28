@@ -10,6 +10,8 @@ File: stack.h
 #ifndef STACK_H
 #define STACK_H
 
+#define MINSIZE 2
+
 /*
  * there are no other includes here because they are not needed.
  * if you do need other things included, they would go here
@@ -32,7 +34,7 @@ public:
 private:
 
     void setSize(int);
-    
+
     // these are the only attributes you need.
     // do not modify them or add any other attributes
     int top;
